@@ -36,11 +36,14 @@ namespace Dolgozat_02._12
             openFileDialog.InitialDirectory = "H:\\C#2023\\Dolgozat 02.12\\Dolgozat 02.12\\Versek\\";
             if (openFileDialog.ShowDialog() == true)
                 VersSzoveg.Text = File.ReadAllText(openFileDialog.FileName);
+            VersekLista.Items.Add(openFileDialog.FileName.Split('\\').Last());
         }
 
         private void UjVers_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = "H:\\C#2023\\Dolgozat 02.12\\Dolgozat 02.12\\Versek\\";
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == true)
                 File.WriteAllText(saveFileDialog.FileName, VersSzoveg.Text);
 
