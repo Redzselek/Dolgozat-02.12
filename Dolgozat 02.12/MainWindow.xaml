@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="Verskezelő" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="400,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="424" Width="400"/>
+        <TextBlock x:Name="VersSzoveg" HorizontalAlignment="Left" Margin="432,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="424" Width="368" Background="#FFF3F3F3"/>
+        <Button x:Name="HozzaAd" Content="Vers hozzáadás" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top" Width="260" Click="HozzaAd_Click"/>
+        <Button x:Name="UjVers" Content="Új vers Létrehozása" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" Width="260" Click="UjVers_Click"/>
+        <Button x:Name="Elolvas" Content="Elolvas" HorizontalAlignment="Left" Margin="325,212,0,0" VerticalAlignment="Top" Width="75" Click="Elolvas_Click"/>
+        <ListBox x:Name="VersekLista"  Margin="0,109,505,0">
+            
+        </ListBox>
 
     </Grid>
 </Window>
