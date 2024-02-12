@@ -31,14 +31,18 @@ namespace Dolgozat_02._12
         private void HozzaAd_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.InitialDirectory = "H:\\C#2023\\Dolgozat 02.12\\Dolgozat 02.12\\Versek\\";
             if (openFileDialog.ShowDialog() == true)
                 VersSzoveg.Text = File.ReadAllText(openFileDialog.FileName);
-            openFileDialog.Filter = "Text files (*.txt)|*.txt|";
-            openFileDialog.InitialDirectory = "H:\\C#2023\\Dolgozat 02.12\\Dolgozat 02.12\\Versek\\";
         }
 
         private void UjVers_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+                File.WriteAllText(saveFileDialog.FileName, VersSzoveg.Text);
 
         }
 
